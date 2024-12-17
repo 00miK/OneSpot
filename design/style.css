@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Cookie&family=Orbitron&display=swap'); /* Import de la police calligraphique */
+
+/* Réinitialisation de base */
+* {
+    margin: 0; /* Supprime les marges par défaut de tous les éléments */
+    padding: 0; /* Supprime les espaces intérieurs */
+}
+
+body {
+    font-family: Arial, sans-serif; /* Police */
+    background-color: rgb(37, 32, 32); /* Couleur d'arrière-plan */
+    display: flex; /* Utilisation de Flexbox */
+    flex-direction: column; /* Direction des éléments en colonne */
+    min-height: 100vh; /* Hauteur minimale de 100% de la fenêtre */
+    margin: 0; /* Supprime les marges par défaut */
+}
+
+.spotlight {
+    position: fixed; /* Pour couvrir tout l'écran */
+    top: 0; /* Positionne l'élément au sommet de la fenêtre, sans espace. */
+    left: 0; /* Aligne l'élément sur le bord gauche de la fenêtre. */
+    width: 100vw; /* Fait en sorte que la largeur de l'élément couvre 100% de la largeur */
+    height: 100vh; /* Fait en sorte que la hauteur de l'élément couvre 100% de la hauteur */
+    overflow: hidden; /* Cache les parties en dehors du projecteur */
+    z-index: 2000; /* S'assurer que c'est au-dessus de tout */
+}
+
+.spotlight::before {
+    content: ""; /* Crée un pseudo-élément avant le contenu de l'élément .spotlight. Le contenu est vide ici, mais il permet de générer un élément visuel */
+    position: absolute; /* Positionne le pseudo-élément de manière absolue par rapport à son parent le plus proche qui a une position définie */
+    top: 50%; /* Place le pseudo-élément à 50% de la hauteur de son parent, en partant du haut */
+    left: 50%; /* Place le pseudo-élément à 50% de la largeur de son parent, en partant de la gauche */
+    width: 0; /* Définit la largeur initiale du pseudo-élément à 0 */
+    height: 0; /* Définit la hauteur initiale du pseudo-élément à 0 */
+    background: radial-gradient(circle, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 1) 80%); /* Applique un fond en dégradé radial */
+    transform: translate(-50%, -50%); /* Centre le pseudo-élément par rapport à son parent, en déplaçant son origine de 50% de sa largeur et hauteur vers le haut et la gauche */
+    z-index: 2000; /* Définit un niveau de superposition élevé, assurant que ce pseudo-élément se trouve au-dessus des autres éléments sur la page */
+    animation: spotlight-reveal 3s ease-in-out forwards; /* Applique une animation nommée "spotlight-reveal" d'une durée de 3 secondes */
+    pointer-events: none; /* Empêche le blocage des clics */
+}
+
+@keyframes spotlight-reveal {
+    0% {
+        width: 100%;
+        height: 100%;
+    }
+    100% {
+        width: 400%;
+        height: 400%;
+    }
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Espacer le logo et le lien "Contact" */
+    align-items: center; /* Aligner verticalement les éléments */
+    background-color: rgb(37, 32, 32); /* Couleur de fond */
+    padding: 10px 20px; /* Espacement autour des éléments */
+    position: fixed; /* La barre reste en haut de la page */
+    top: 0; /* Ancrée en haut */
+    width: 94%; /* Prendre toute la largeur */
+    z-index: 1000; /* Pour qu'elle reste visible en haut */
+}
+
+.navbar-logo {
+    width: 170px; /* Taille du logo */
+    height: auto; /* Garder les proportions */
+}
+
+.navbar-contact {
+    font-family : "Cookie", cursive ; /* Applique la police calligraphique */
+    color: white; /* Couleur du texte */
+    text-decoration: none; /* Supprimer le soulignement */
+    font-size: 18px; /* Taille de la police */
+    padding: 10px; /* Ajoute du padding autour du lien */
+    background-color: rgb(190, 177, 32); /* Couleur de fond pour le lien */
+    border-radius: 5px; /* Arrondir les bords */
+    transition: background-color 0.3s ease; /* Transition douce au survol */
+    animation: tilt-shaking-pause 7s infinite; /* Cycle total */
+}
+
+.navbar-contact:hover {
+    background-color: rgb(159, 139, 25); /* Changer de couleur au survol */
+}
+
+@keyframes tilt-shaking-pause {
+    0%, 57.14% { 
+        transform: rotate(0deg);
+    }
+    60%, 62% {
+        transform: rotate(5deg);
+    }
+    64% {
+        transform: rotate(-5deg);
+    }
+    66%, 68% {
+        transform: rotate(5deg);
+    }
+    70% {
+        transform: rotate(-5deg);
+    }
+    72%, 74% {
+        transform: rotate(5deg);
+    }
+    76% {
+        transform: rotate(-5deg);
+    }
+    78%, 100% {
+        transform: rotate(0deg);
+    }
+}
+
+.container {
+    flex: 1; /* Permet au container de prendre l'espace disponible */
+    text-align: center; /* Centre le texte */
+    background-color: rgb(48, 48, 48); /* Couleur d'arrière-plan du container */
+    width: 100%; /* Largeur à 100% */
+    max-width: 340px; /* Largeur maximale */
+    padding: 20px; /* Espacement intérieur */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Ombre portée */
+    margin: 80px auto 0; /* Ajoute une marge supérieure pour éviter la navbar fixe */
+}
+
+.profile-pic {
+    width: 120px; /* Taille de l'image */
+    border-radius: 50%; /* Rend l'image circulaire */
+    border: 2px solid #333; /* Bordure solide */
+}
+
+h1 {
+    margin: 15px 0 5px; /* Marge extérieure */
+    font-size: 24px; /* Taille du texte */
+    font-weight: bold; /* Texte en gras */
+    color: rgb(154, 154, 154); /* Couleur du titre */
+}
+
+h2 {
+    font-size: 14px; /* Taille du texte */
+    color: #777; /* Couleur du texte */
+    margin-bottom: 20px; /* Marge extérieure en bas */
+    font-weight: normal; /* Définit le poids de la police à normal */
+}
+
+.global-links {
+    display: flex; /* Utilise Flexbox */
+    flex-direction: column; /* Aligne les éléments en colonne */
+}
+
+.individual-link {
+    display: block; /* Élément de bloc */
+    background-color: rgb(190, 177, 32); /* Couleur de fond */
+    color: white; /* Couleur du texte */
+    font-weight: bold; /* Texte en gras */
+    text-decoration: none; /* Supprime le soulignement */
+    padding: 12px; /* Espacement intérieur */
+    margin: 10px 0; /* Marge extérieure */
+    border-radius: 5px; /* Coins arrondis */
+    font-size: 16px; /* Taille du texte */
+    transition: background-color 0.3s ease; /* Transition */
+}
+
+.individual-link:hover {
+    background-color: rgb(159, 139, 25); /* Changement de couleur au survol */
+}
+
+.social-logos {
+    display: flex; /* Active Flexbox */
+    justify-content: center; /* Centrer les icônes */
+    margin-top: 20px; /* Ajoute un espace de 20px entre le conteneur des icônes et l'élément situé au-dessus. */
+}
+
+.social-logos a {
+    margin: 0 10px; /* Espacement entre les icônes */
+}
+
+.social-icon {
+    width: 40px; /* Taille des icônes */
+    height: 40px; /* Définit la hauteur de chaque icône sociale à 40px */
+    transition: transform 0.3s ease; /* Ajoute une transition sur la propriété "transform", qui durera 0.3 secondes avec une courbe d'accélération "ease" (démarrage lent, accélération au milieu, puis ralentissement à la fin) */
+}
+
+.social-icon:hover {
+    transform: scale(1.2); /* Agrandir légèrement les icônes au survol */
+}
+
+footer {
+    padding: 31px 0; /* Définit un espacement interne de 31px en haut et en bas, et 0px à gauche et à droite pour le footer */
+    background-color: rgb(37, 32, 32); /* Couleur de fond */
+    color: #595a5b; /* Définit la couleur du texte */
+    opacity: 0; /* Rendre le footer transparent au départ */
+    transform: translateY(100%); /* Le placer au bas de l'écran */
+    animation: footer-slide-up 1s ease-out forwards; /* Animation du footer */
+}
+
+footer ul {
+    padding: 0; /* Supprime les espacements internes */
+    list-style: none; /* Supprime les puces ou numéros par défaut des éléments de liste */
+    text-align: center; /* Centre le texte à l'intérieur des éléments de la liste */
+    font-size: 18px; /* Définit la taille de la police des éléments de la liste à 18px */
+    line-height: 1.6; /* Définit la hauteur de ligne à 1.6, ce qui donne plus d'espace vertical entre les lignes de texte */
+    margin-bottom: 0; /* Supprime la marge inférieure par défaut de la liste, la ramenant à 0px */
+    display: flex; /* Utilisation de Flexbox pour aligner en ligne */
+    justify-content: center; /* Centrer horizontalement les éléments */
+}
+
+footer li {
+    padding: 0 10px; /* Espacement horizontal entre les éléments */
+    display: inline; /* S'assurer que les éléments sont en ligne */
+}
+
+footer ul a {
+    color: inherit; /* Hérite de la couleur du parent (dans ce cas, la couleur définie pour le <ul> ou le footer) */
+    text-decoration: none; /* Supprime la décoration par défaut des liens */
+    opacity: 0.8; /* Définit l'opacité des liens à 0.8 */
+}
+
+footer ul a:hover {
+    opacity: 1; /* Lorsqu'on survole un lien (état : hover), l'opacité passe à 1 */
+}
+
+footer .copyright {
+    margin-top: 15px; /* Ajoute une marge de 15px au-dessus de l'élément avec la classe "copyright" */
+    text-align: center; /* Centre le texte à l'intérieur de l'élément "copyright" horizontalement */
+    font-size: 13px; /* Définit la taille de la police du texte de copyright à 13px */
+    color: #595a5b; /* Définit la couleur du texte du copyright */
+    margin-bottom: 0; /* Supprime la marge inférieure de l'élément "copyright", la ramenant à 0px */
+}
+
+
+@keyframes footer-slide-up {
+    0% {
+        transform: translateY(100%); /* Commence en bas de l'écran */
+        opacity: 0; /* Transparent au départ */
+    }
+    100% {
+        transform: translateY(0); /* Arrive à sa position normale */
+        opacity: 1; /* Devenir complètement opaque */
+    }
+}
