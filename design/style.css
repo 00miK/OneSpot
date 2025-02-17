@@ -50,7 +50,7 @@ body {
     }
 }
 
-.navbar {
+header {
     display: flex;
     justify-content: space-between; /* Espacer le logo et le lien "Contact" */
     align-items: center; /* Aligner verticalement les éléments */
@@ -71,7 +71,7 @@ body {
     font-family : "Cookie", cursive ; /* Applique la police calligraphique */
     color: white; /* Couleur du texte */
     text-decoration: none; /* Supprimer le soulignement */
-    font-size: 18px; /* Taille de la police */
+    font-size: 18px; /* Taille de la police */                                                  
     padding: 10px; /* Ajoute du padding autour du lien */
     background-color: rgb(190, 177, 32); /* Couleur de fond pour le lien */
     border-radius: 5px; /* Arrondir les bords */
@@ -110,7 +110,7 @@ body {
     }
 }
 
-.container {
+.profile-links {
     flex: 1; /* Permet au container de prendre l'espace disponible */
     text-align: center; /* Centre le texte */
     background-color: rgb(48, 48, 48); /* Couleur d'arrière-plan du container */
@@ -174,13 +174,15 @@ h2 {
     margin: 0 10px; /* Espacement entre les icônes */
 }
 
-.social-icon {
+i {
+    font-size: 30px;/* Taille des icônes */
     width: 40px; /* Taille des icônes */
+    color: black;
     height: 40px; /* Définit la hauteur de chaque icône sociale à 40px */
     transition: transform 0.3s ease; /* Ajoute une transition sur la propriété "transform", qui durera 0.3 secondes avec une courbe d'accélération "ease" (démarrage lent, accélération au milieu, puis ralentissement à la fin) */
 }
 
-.social-icon:hover {
+i:hover {
     transform: scale(1.2); /* Agrandir légèrement les icônes au survol */
 }
 

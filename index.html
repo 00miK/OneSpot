@@ -6,20 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configuration pour une vue responsive -->
     <meta http-equiv="X-UA-Compatible" content="ie=edge"> <!-- Compatibilité avec Internet Explorer -->
     <title>Linktree Lionel Messi</title> <!-- Titre de la page affiché dans l'onglet du navigateur -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="design/style.css"> <!-- Lien vers la feuille de style -->
 </head>
 <body>
     <div class="spotlight"> <!-- Conteneur principal avec un effet de projecteur -->
         <header>
             <!-- Barre de navigation -->
-            <nav class="navbar">
-                <img src="logos/OneSpot.svg" alt="Linktree logo" class="navbar-logo"> <!-- Logo de la barre de navigation -->
-                <a href="mailto:kitave2080@kindomd.com" class="navbar-contact">Give a Feedback</a> <!-- Lien pour envoyer un email de retour -->
-            </nav>    
+            <img src="logos/OneSpot.svg" alt="Linktree logo" class="navbar-logo"> <!-- Logo de la barre de navigation -->
+            <a href="mailto:kitave2080@kindomd.com" class="navbar-contact">Give a Feedback</a> <!-- Lien pour envoyer un email de retour -->
         </header>
         
         <main> 
-            <div class="container"> <!-- Conteneur principal pour le contenu de la page -->
+            <div class="profile-links"> <!-- Conteneur principal pour le contenu de la page -->
                 <div class="profile"> <!-- Section du profil -->
                     <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/Messi_vs_Nigeria_2018.jpg" alt="Lionel Messi" class="profile-pic"> <!-- Photo de profil -->
                     <h1>Lionel Messi</h1> <!-- Nom de l'utilisateur du Linktree -->
@@ -34,25 +33,27 @@
 
                 <div class="social-logos"> <!-- Section des icônes des réseaux sociaux -->
                     <a href="https://www.instagram.com/leomessi" target="_blank">
-                        <img src="logos/instagram.svg" alt="Instagram" class="social-icon"> <!-- Icône Instagram -->
+                        <i class="fab fa-instagram"></i> <!-- Icône Instagram -->
                     </a>
                     <a href="https://twitter.com/TeamMessi" target="_blank">
-                        <img src="logos/X.svg" alt="Twitter/X" class="social-icon"> <!-- Icône Twitter/X -->
+                        <i class="fab fa-twitter"></i> <!-- Icône Twitter/X -->
                     </a>
                     <a href="https://www.facebook.com/leomessi" target="_blank">
-                        <img src="logos/facebook.svg" alt="Facebook" class="social-icon"> <!-- Icône Facebook -->
+                        <i class="fab fa-facebook"></i> <!-- Icône Facebook -->
                     </a>
                 </div>
             </div>
         </main> 
 
         <footer>
+            <nav>
+                <ul class="list-inline"> <!-- Liste des liens en ligne -->
+                    <li class="list-inline-item"><a href="https://about-onespot.carrd.co/">About</a></li> <!-- Lien vers À propos -->
+                    <li class="list-inline-item"><a href="https://terms-onespot.carrd.co/">Terms</a></li> <!-- Lien vers les conditions d'utilisation -->
+                    <li class="list-inline-item"><a href="https://privacy-onespot.carrd.co/">Privacy Policy</a></li> <!-- Lien vers la politique de confidentialité -->
+                </ul>
+            </nav>
             <!-- Footer avec des liens informatifs -->
-            <ul class="list-inline"> <!-- Liste des liens en ligne -->
-                <li class="list-inline-item"><a href="https://about-onespot.carrd.co/">About</a></li> <!-- Lien vers À propos -->
-                <li class="list-inline-item"><a href="https://terms-onespot.carrd.co/">Terms</a></li> <!-- Lien vers les conditions d'utilisation -->
-                <li class="list-inline-item"><a href="https://privacy-onespot.carrd.co/">Privacy Policy</a></li> <!-- Lien vers la politique de confidentialité -->
-            </ul>
             <p class="copyright">OneSpot © 2024</p> <!-- Copyright -->
         </footer>
     </div> <!-- Fin du conteneur principal avec l'effet de projecteur -->
